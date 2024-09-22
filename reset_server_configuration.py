@@ -73,6 +73,7 @@ class ResetServerConfiguration:
         if(folder_path):
             share_name = os.path.basename(folder_path)  
             self.selected_audio_file_path.set(f'\\\\{os.environ['COMPUTERNAME']}\\{share_name}')  
+            self.parent_app.audio_store_file_txt.config(text=f'\\\\{os.environ['COMPUTERNAME']}\\{share_name}')
 
     def save_server_configuration(self):
         port_number = self.portnumber_entry.get()      
